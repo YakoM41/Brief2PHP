@@ -108,7 +108,7 @@ $produits = $stmt->fetchAll(PDO::FETCH_ASSOC);
 </head>
 
 <body>
-<h1>Modification des informations</h1>
+<h1>Liste des produits</h1>
 <?php if(!empty($produits)): ?>
     <table>
         <thead>
