@@ -5,8 +5,6 @@ require 'config.php';
 
 
 
-
-
 // Edition et la suppression
 //creation d'un fichier edit.php et delete.php
 //exemple du edit.php :
@@ -66,8 +64,51 @@ $produits = $stmt->fetchAll(PDO::FETCH_ASSOC);
           content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>Liste des produits</title>
+    <style>
+
+        body {
+            font-family: sans-serif;
+            margin: 40px;
+            line-height: 1.6;
+        }
+
+        form {
+            max-width: 400px;
+            display: flex;
+            flex-direction: column;
+            gap: 15px;
+        }
+
+        label {
+            display: flex;
+            flex-direction: column;
+            font-weight: bold;
+        }
+
+        input {
+            padding: 8px;
+            margin-top: 5px;
+            border: 1px solid #ccc;
+            border-radius: 4px;
+        }
+
+        button {
+            padding: 10px;
+            background-color: #007bff;
+            color: white;
+            border: none;
+            border-radius: 4px;
+            cursor: pointer;
+        }
+
+        button:hover {
+            background-color: #0056b3;
+        }
+    </style>
 </head>
+
 <body>
+<h1>Modification des informations</h1>
 <?php if(!empty($produits)): ?>
     <table>
         <thead>
